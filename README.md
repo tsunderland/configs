@@ -1,8 +1,6 @@
-# vim_rc
-My vimrc file modifications for tracking updates and customisations.
+# MyConfigs
+My vimrc and tmux configs!.
 
-This source is originally based on work by Amir Salihefendic (http://amix.dk)
-
-Modifications are based on my needs and method of operation. If you want to use this you'll need to setup Vundle and powerline. You'll also need to follow the installation process for YouCompleteMe plugins otherwiose you'll get a nice notification telling you to RTFM.
+This source uses references from Amir Salihefendic (http://amix.dk) and freecodecamp (https://www.freecodecamp.org/news/vimrc-configuration-guide-customize-your-vim-editor/). 
 
 Goodluck!
