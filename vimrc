@@ -17,9 +17,9 @@ autocmd FileType python nnoremap <buffer> <leader>c/ I#<esc>
 autocmd FileType javascript nnoremap <buffer> <leader>c/ I//<esc>
 autocmd FileType cpp nnoremap <buffer> <leader>c/ I//<esc>
 
-set shiftwidth=4
-set tabstop=4
-
+set shiftwidth=2
+set tabstop=2
+set expandtab
 " Map leader
 let mapleader = ","
 let g:mapleader=","
@@ -42,6 +42,10 @@ set si
 " highlight the current line and column for the curson
 "set cursorline
 "set cursorcolumn
+" set a column at 81 characters
+set colorcolumn=81
+highlight ColorColumn ctermbg=magenta
+call matchadd('ColorColumn', '\%81v', 100)
 " always show current position in file
 set ruler
 " set scroll lines to keep
@@ -98,7 +102,7 @@ set showmatch
 " highlight while doing a search
 set hlsearch
 " search into subfolders
-set path+=**
+set path+=**;~/code/**/
 " file search
 let g:netrw_banner=0 " disable annoying banner
 let g:netrw_liststyle=3 "tree view
@@ -121,6 +125,7 @@ map <leader>cc :botright cope<cr>
 map <leader>co ggVGy:tabnew<cr>:set syntax=qf<cr>pgg
 map <leader>n :cn<cr>
 map <leader>p :cp<cr>
+set tags=./tags;~/code/core/tags;/
 
 " -- Getting around --
 " treat long lines as break lines
@@ -144,6 +149,8 @@ command! Ctags !/usr/bin/ctags .
 " ctrl+] jump to tag under cursor
 " ctrl+[ jump to previous cursor
 " ctrl+t jump to start
+map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
 " -- Spell Check --
 map <leader>ss :setlocal spell!<cr>
